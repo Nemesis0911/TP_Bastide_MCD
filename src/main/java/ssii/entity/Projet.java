@@ -1,10 +1,12 @@
 package ssii.entity;
-
 import jakarta.persistence.*;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
 import lombok.*;
+import org.springframework.data.convert.Jsr310Converters;
+
+import java.time.LocalDate;
 
 @Entity
 @Getter
@@ -12,11 +14,10 @@ import lombok.*;
 @NoArgsConstructor
 @RequiredArgsConstructor // lombok, pour générer un constructeur avec les champs @NonNull
 @ToString
-public class Personne {
-
+public class Projet {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer matricule;
+    private Integer code;
 
     @NotBlank
     @NonNull // lombok
@@ -24,11 +25,8 @@ public class Personne {
 
     @NotBlank
     @NonNull // lombok
-    private String prenom;
+    private LocalDate debut;
 
-    @NotBlank
-    @NonNull // lombok
-    private String poste;
-
+    private java.time.LocalDate fin;
 
 }
