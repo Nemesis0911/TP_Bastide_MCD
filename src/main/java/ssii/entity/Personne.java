@@ -30,5 +30,7 @@ public class Personne {
     @NonNull // lombok
     private String poste;
 
+    @OneToMany
+    private Participation participation;
 
 }

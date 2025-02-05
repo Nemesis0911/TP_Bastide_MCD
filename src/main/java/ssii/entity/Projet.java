@@ -27,6 +27,10 @@ public class Projet {
     @NonNull // lombok
     private LocalDate debut;
 
-    private java.time.LocalDate fin;
+
+    private LocalDate fin;
+
+    @OneToMany
+    private Participation participation;
 
 }

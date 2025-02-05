@@ -24,5 +24,12 @@ public class Participation {
     @NonNull // lombok
     private Float Pourcentage;
 
+    @ManyToOne
+    private Personne personne;
+
+    @ManyToOne
+    private Projet projet;
+
+
 
 }
