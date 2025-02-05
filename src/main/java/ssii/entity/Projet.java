@@ -7,6 +7,9 @@ import lombok.*;
 import org.springframework.data.convert.Jsr310Converters;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
 @Entity
 @Getter
@@ -27,10 +30,9 @@ public class Projet {
     @NonNull // lombok
     private LocalDate debut;
 
-
     private LocalDate fin;
 
-    @OneToMany
-    private Participation participation;
+    @OneToMany (mappedBy = "projet")
+    private List<Participation> participations = new ArrayList<>();
 
 }
