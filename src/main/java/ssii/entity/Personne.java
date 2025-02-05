@@ -33,7 +33,13 @@ public class Personne {
     @NonNull // lombok
     private String poste;
 
+
     @OneToMany  (mappedBy = "personne")
     private List<Participation> participations = new ArrayList<>();
 
+    @ManyToOne
+    private Personne superieur;
+
+    @OneToMany(mappedBy = "superieur")
+    private List<Personne> Subordonne = new ArrayList<>();
 }
